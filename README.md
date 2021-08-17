@@ -1,8 +1,8 @@
 # sistemHotel
-Project Akhir Framework dengan Tema Sistem Hotel
+Project Akhir Framework dengan Tema Sistem Hotel menggunakan CodeIgniter 4
 
 ### Docs
-[![CodeIgniter 4](https://cdn1.iconfinder.com/data/icons/logos-3/304/codeigniter-256.png)](https://codeigniter.com/user_guide/intro/index.html)
+[![CodeIgniter](https://cdn1.iconfinder.com/data/icons/logos-3/304/codeigniter-256.png)](https://codeigniter.com/user_guide/intro/index.html)
 
 ## Cara running sistem
 ```sh
@@ -13,7 +13,7 @@ Buka XAMPP -> Start Apache & MySQL
 Masuk ke project **Root directory**, lalu ketikkan command dibawah
 ```sh
 
-KerjaPraktek/backend> npm run server       # Untuk menjalankan backend server dengan nodemon
+$ php spark serve       # Untuk menjalankan buka browser ketik localhost:8080
 
 ```
 
