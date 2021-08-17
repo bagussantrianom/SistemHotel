@@ -11,6 +11,7 @@
 
         <!-- Content Row -->
         <!-- Button trigger modal -->
+
         <button type="button" class="btn btn-info mb-3" data-toggle="modal" data-target="#modaltambah">
             Tambah data kamar
         </button>
@@ -24,6 +25,7 @@
                 <th class="text-center">Action</th>
             </tr>
             <!-- melakukan perulangan array dataKamar pada kontroller untuk menginisiasi semua data pada db -->
+            <!-- inisiasi nomor = 1 -->
             <?php $no = 1;
             foreach ($dataKamar as $dk) : ?>
 
@@ -35,12 +37,11 @@
                     <td class="text-center">Rp. <?= $dk->harga_kamar ?></td>
                     <td>
                         <center>
-                            <!-- menambahkan id kamar sebagai parameter data target modal -->
+                            <!--tombol edit mengarahkan ke modal berdasarkan kode kamar -->
                             <button data-target="#modaledit<?= $dk->kode_kamar; ?>" type=" button" class="btn btn-warning" data-toggle="modal">
                                 <i class=" fa fa-edit"></i>
                             </button>
-                            <!-- menuju ke controler kamar fungsi hapus data menggunakan parameter kode kamar
-                            menambahkan fungsi konfirmasi data dihapus -->
+                            <!-- menampilkan fungsi hapus data -->
                             <a onclick="return confirm('Apakah data akan dihapus ?')" href="<?php echo base_url("Kamar/hapusData"); ?>/<?= $dk->kode_kamar ?>" class="btn btn-danger"><i class="fa fa-trash"></i></a>
                         </center>
                     </td>
@@ -60,7 +61,8 @@
                         </button>
                     </div>
                     <div class="modal-body">
-                        <!-- mengirim method dan fungsi simpan post ke controller -->
+                        <!-- mengirim method post dan fungsi simpan post ke controller -->
+                        <!-- method post berfungsi untuk menyimpan data ke controller kamar dengan function simpan form -->
                         <form method="POST" action="<?php echo base_url('Kamar/simpanForm'); ?>">
                             <div class="form-group">
                                 <label>Kode Kamar</label>

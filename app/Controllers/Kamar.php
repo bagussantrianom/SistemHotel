@@ -26,6 +26,7 @@ class Kamar extends BaseController
         //membuat var $data dalam bentuk array sebagai penampung data yang telah diambil di modal
         $data = [
             'title' => 'Kelola Kamar',
+            //mengambil fungsi
             'dataKamar' => $ambildata
         ];
 
@@ -42,7 +43,7 @@ class Kamar extends BaseController
         $hargaKamar = $this->request->getPost("hargaKamar");
 
         //membuat array utk menampung variabel ke data untuk langsung masuk ke simpan
-        //yg kiri nama atribute di database, yg kanan nama 'name' dari inputam view
+        //yg kiri nama atribute di database, yg kanan nama 'name' dari inputan view
         $data = [
             'kode_kamar' => $kodeKamar,
             'nama_kamar' => $namaKamar,
@@ -88,7 +89,7 @@ class Kamar extends BaseController
             //membuat variabel baru dengan nama edit untuk melempar data ke model
             //objek model menjalankan method editData yang berada di model dan mengirim data array nya dengan tabel
             $edit =  $this->mkamar->editData($this->table, $data, $where);
-            //jika edit berhasil maka :
+            //jika edit berhasil maka :h
             if ($edit) {
                 //menjalankan script alert dan me redirect ke controller /kamar
                 echo "<script>alert('Data berhasil diedit'); window.location='" . base_url('/kamar') . "';</script>";

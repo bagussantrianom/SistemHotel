@@ -12,11 +12,11 @@ class KamarModel extends Model
         //membuat variabel query;
         //membuat objek db untuk menjalankan fungsi query untuk menselect semuda data dari tabel tb_kamar
         $query = $this->db->query("SELECT * FROM tb_kamar");
-        //mengembalikan dinlai data
+        //mengembalikan dinilai data
         return $query->getResult();
     }
 
-    //membuat fungsi utk menerima inputan $table dan %data dari controller
+    //membuat fungsi utk menerima inputan $table dan $data dari controller
     function simpanData($table, $data)
     {
         //script dari query simpan
@@ -27,12 +27,14 @@ class KamarModel extends Model
         return true;
     }
 
+    //membuat fungsi utk mengupdate inputan $table, $data dan $where dari controller
     function editData($table, $data, $where)
     {
         //script dari query edit
         //membuat objek $edit untuk meninisasi tabel
         //membuat objek $edit untuk men set data dari kontroller (yg kiri) dan databse (yg kanan)
         $edit = $this->db->table($table);
+        //$edit mengirim attribut dari controller yang diinputkan melalui view ke database
         $edit->set('kode_kamar', $data['kode_kamar']);
         $edit->set('nama_kamar', $data['nama_kamar']);
         $edit->set('harga_kamar', $data['harga_kamar']);
